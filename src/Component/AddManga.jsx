@@ -14,7 +14,8 @@ const AddManga = () => {
         auther: '',
         price: '',
         desc: '',
-        language: ''
+        language: '',
+        category:''
     });
 
     const [message, setMessage] = useState('');
@@ -106,6 +107,22 @@ const AddManga = () => {
                         required
                     />
                 </div>
+               <div>
+                      <label className="block text-sm font-medium text-gray-300">Category</label>
+                       <select
+                       name="category"
+                         value={formData.category}
+                        onChange={handleChange}
+                         className="mt-1 block w-full px-3 py-2 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                        required
+                        >
+                        <option value="">Select a category</option>
+                     <option value="Manga">Manga</option>
+                    <option value="Novel">Novel</option>
+                     <option value="Popular Book">Popular Book</option>
+                      </select>
+                    </div>
+
                 <button
                     type="submit"
                     className="mt-4 inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"

@@ -16,6 +16,7 @@ import Order from './Component/Order'
 import Setting from './Component/Setting'
 import { useContext } from 'react'
 import AddManga from './Component/AddManga'
+import Category from './Component/Category'
 
 function App() {
 
@@ -41,6 +42,7 @@ function App() {
         <Route  path='/login' element={<Login/>}></Route>
         <Route  path='/sign-up' element={<SignUp/>}></Route>
         <Route  path='/get-book-id/:id' element={<Detail/>}></Route>
+        <Route  path='/category' element={<Category/>}></Route>
       </Routes>
  
     <Footer/>

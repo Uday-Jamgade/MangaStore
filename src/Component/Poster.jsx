@@ -2,6 +2,7 @@ import React from 'react'
 
 const Poster = () => {
 
+
   const posters = [
     { title: 'MONKEY D LUFFY', img: 'https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/d8ddfe70-0b23-4aef-8d58-769268414fcb/df8hkla-de1c17e1-ac29-48a2-8ea2-433f07674987.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2Q4ZGRmZTcwLTBiMjMtNGFlZi04ZDU4LTc2OTI2ODQxNGZjYlwvZGY4aGtsYS1kZTFjMTdlMS1hYzI5LTQ4YTItOGVhMi00MzNmMDc2NzQ5ODcucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.Es4AZST2FnD5P8NeYt6-VU4rO4W_GxiDJia0pefc-GU' },
     { title: 'RORONOA ZORO', img: 'https://ih1.redbubble.net/image.4612895624.1218/flat,750x,075,f-pad,750x1000,f8f8f8.u2.jpg' },

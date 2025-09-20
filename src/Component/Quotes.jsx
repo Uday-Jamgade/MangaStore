@@ -1,111 +1,8 @@
-// import React from 'react'
-
-// const Quotes = () => {
-//   return (
-//     <>
-//       <div className="max-w-8xl mx-auto p-6">
-//         <div className="flex flex-wrap -mx-4">
-//           <div className="w-full md:w-1/2 lg:w-1/2 px-4 mb-8">
-//             <div className="bg-white shadow-lg rounded-lg overflow-hidden">
-//               <div className="md:flex">
-//                 <div className="md:flex-shrink-0">
-//                   <img className="h-65 w-full object-cover md:w-48" src="https://th.bing.com/th/id/OIP.W6bjTmCLGxtTdjfmBzdxSAHaGl?rs=1&pid=ImgDetMain" alt="Author" />
-//                 </div>
-//                 <div className="p-8">
-//                   <p className="mt-2 text-gray-600">"Kids who have never seen peace and kids who have never seen war have different values"</p>
-//                   <div className="mt-4">
-//                     <p className="text-lg font-medium text-gray-900">-Donquixote Doflamingo</p>
-//                   </div>
-//                 </div>
-//               </div>
-//             </div>
-//           </div>
-//           <div className="w-full md:w-1/2 lg:w-1/2 px-4 mb-8">
-//             <div className="bg-white shadow-lg rounded-lg overflow-hidden">
-//               <div className="md:flex">
-//                 <div className="md:flex-shrink-0">
-//                   <img className="h-65 w-full object-cover md:w-48" src="https://assets.mycast.io/actor_images/actor-l-death-note-1019614_large.jpg?1710176354" alt="Author" />
-//                 </div>
-//                 <div className="p-8">
-//                   <p className="mt-2 text-gray-600">"Learn to treasure your life because unfortunatly, it can be taken away from you anytime"</p>
-//                   <div className="mt-4">
-//                     <p className="text-lg font-medium text-gray-900">-L Lawliet</p>
-//                   </div>
-//                 </div>
-//               </div>
-//             </div>
-//           </div>
-//           <div className="w-full md:w-1/2 lg:w-1/2 px-4 mb-8">
-//             <div className="bg-white shadow-lg rounded-lg overflow-hidden">
-//               <div className="md:flex">
-//                 <div className="md:flex-shrink-0">
-//                   <img className="h-65 w-full object-cover md:w-48" src="https://i.pinimg.com/originals/11/46/54/114654efd2169c3ad5992c5df959dcef.jpg" alt="Author" />
-//                 </div>
-//                 <div className="p-8">
-//                   <p className="mt-2 text-gray-600">"As long as the concept of Winner exists, there will  also be Loser"</p>
-//                   <div className="mt-4">
-//                     <p className="text-lg font-medium text-gray-900">-Ucciha Madara</p>
-//                   </div>
-//                 </div>
-//               </div>
-//             </div>
-//           </div>
-//           <div className="w-full md:w-1/2 lg:w-1/2 px-4 mb-8">
-//             <div className="bg-white shadow-lg rounded-lg overflow-hidden">
-//               <div className="md:flex">
-//                 <div className="md:flex-shrink-0">
-//                   <img className="h-65 w-full object-cover md:w-48" src="https://th.bing.com/th/id/OIP.W6bjTmCLGxtTdjfmBzdxSAHaGl?rs=1&pid=ImgDetMain" alt="Author" />
-//                 </div>
-//                 <div className="p-8">
-//                   <p className="mt-2 text-gray-600">"Kids who have never seen peace and kids who have never seen war have different values"</p>
-//                   <div className="mt-4">
-//                     <p className="text-lg font-medium text-gray-900">-Donquixote Doflamingo</p>
-//                   </div>
-//                 </div>
-//               </div>
-//               </div>
-//           </div>
-//           <div className="w-full md:w-1/2 lg:w-1/2 px-4 mb-8">
-//             <div className="bg-white shadow-lg rounded-lg overflow-hidden">
-//               <div className="md:flex">
-//                 <div className="md:flex-shrink-0">
-//                   <img className="h-65 w-full object-cover md:w-48" src="https://th.bing.com/th/id/OIP.W6bjTmCLGxtTdjfmBzdxSAHaGl?rs=1&pid=ImgDetMain" alt="Author" />
-//                 </div>
-//                 <div className="p-8">
-//                   <p className="mt-2 text-gray-600">"Kids who have never seen peace and kids who have never seen war have different values"</p>
-//                   <div className="mt-4">
-//                     <p className="text-lg font-medium text-gray-900">-Donquixote Doflamingo</p>
-//                   </div>
-//                 </div>
-//               </div>
-//               </div>
-//           </div>   
-//           <div className="w-full md:w-1/2 lg:w-1/2 px-4 mb-8">
-//             <div className="bg-white shadow-lg rounded-lg overflow-hidden">
-//               <div className="md:flex">
-//                 <div className="md:flex-shrink-0">
-//                   <img className="h-65 w-full object-cover md:w-48" src="https://th.bing.com/th/id/OIP.W6bjTmCLGxtTdjfmBzdxSAHaGl?rs=1&pid=ImgDetMain" alt="Author" />
-//                 </div>
-//                 <div className="p-8">
-//                   <p className="mt-2 text-gray-600">"Kids who have never seen peace and kids who have never seen war have different values"</p>
-//                   <div className="mt-4">
-//                     <p className="text-lg font-medium text-gray-900">-Donquixote Doflamingo</p>
-//                   </div>
-//                 </div>
-//               </div>
-//               </div>
-//           </div>
-//         </div>
-//       </div>
-//     </>
-
-
-//   )
-// }
-
-// export default Quotes
+          
 
 import React from 'react';
+import { useLocation } from 'react-router-dom';
+
 
 const quotes = [
   {
@@ -153,6 +50,12 @@ const quotes = [
 ];
 
 const Quotes = () => {
+
+  const location = useLocation(); 
+  const queryParams = new URLSearchParams(location.search);
+  const category = queryParams.get('category');
+  console.log(category);
+
   return (
     <>
       <div className="max-w-8xl mx-auto p-6 ">
