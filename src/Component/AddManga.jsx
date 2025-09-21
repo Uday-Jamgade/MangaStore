@@ -15,7 +15,8 @@ const AddManga = () => {
         price: '',
         desc: '',
         language: '',
-        category:''
+        category:'',
+        genre:''
     });
 
     const [message, setMessage] = useState('');
@@ -40,7 +41,7 @@ const AddManga = () => {
 
     return (
         <div className="container mx-auto px-4 py-8">
-            <h1 className="text-2xl font-bold mb-4 text-white">Add Book</h1>
+            <h1 className="text-2xl  font-bold mb-4 text-white">Add Book</h1>
             <form onSubmit={handleSubmit} className="space-y-4">
                 <div>
                     <label className="block text-sm font-medium text-gray-300">URL</label>
@@ -49,7 +50,7 @@ const AddManga = () => {
                         name="url"
                         value={formData.url}
                         onChange={handleChange}
-                        className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                        className="mt-1 block w-full text-white px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                         required
                     />
                 </div>
@@ -60,7 +61,7 @@ const AddManga = () => {
                         name="title"
                         value={formData.title}
                         onChange={handleChange}
-                        className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                        className="mt-1 block w-full px-3 text-white py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                         required
                     />
                 </div>
@@ -71,7 +72,7 @@ const AddManga = () => {
                         name="auther"
                         value={formData.auther}
                         onChange={handleChange}
-                        className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                        className="mt-1 block w-full px-3 text-white py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                         required
                     />
                 </div>
@@ -82,7 +83,7 @@ const AddManga = () => {
                         name="price"
                         value={formData.price}
                         onChange={handleChange}
-                        className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                        className="mt-1 block w-full px-3 text-white py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                         required
                     />
                 </div>
@@ -92,7 +93,7 @@ const AddManga = () => {
                         name="desc"
                         value={formData.desc}
                         onChange={handleChange}
-                        className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                        className="mt-1 block w-full text-white px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                         required
                     />
                 </div>
@@ -103,7 +104,7 @@ const AddManga = () => {
                         name="language"
                         value={formData.language}
                         onChange={handleChange}
-                        className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                        className="mt-1 block w-full text-white px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                         required
                     />
                 </div>
@@ -117,11 +118,38 @@ const AddManga = () => {
                         required
                         >
                         <option value="">Select a category</option>
-                     <option value="Manga">Manga</option>
+                     <option value="Biography">Biography</option>
                     <option value="Novel">Novel</option>
-                     <option value="Popular Book">Popular Book</option>
+                     <option value="Manga">Manga</option>
                       </select>
                     </div>
+
+                    <div>
+  <label className="block text-sm font-medium text-gray-300">Genre</label>
+  <select
+    name="genre"
+    value={formData.genre}
+    onChange={handleChange}
+    className="mt-1 block w-full px-3 py-2 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+    required
+  >
+    <option value="">Select a genre</option>
+    <option value="Adventure">Adventure</option>
+    <option value="Mystery">Mystery</option>
+    <option value="Biography">Biography</option>
+    <option value="Self-Help">Self-Help</option>
+    <option value="Health">Health</option>
+    <option value="Travel">Travel</option>
+    <option value="Thriller">Thriller</option>
+    <option value="Dystopia">Dystopia</option>
+    <option value="Fantasy">Fantasy</option>
+    <option value="Romance">Romance</option>
+    <option value="History">History</option>
+    <option value="Horror">Horror</option>
+    <option value="Science-Fiction">Science-Fiction</option>
+    <option value="Philosophy">Philosophy</option>
+  </select>
+</div>
 
                 <button
                     type="submit"

@@ -17,6 +17,7 @@ const Cart = () => {
     try{
       const response =await axios.post("http://localhost:3000/api/v1/place-order",{order:cartItems},{headers});
       console.log( response.data)
+      alert("Order Placed Successfully")
     }
     catch (error){
       console.error("error",error)

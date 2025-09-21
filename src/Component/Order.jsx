@@ -13,13 +13,13 @@ const Order = () => {
     const fetchData=async()=>{
       const response = await axios.get("http://localhost:3000/api/v1/get-order-history",{headers})
       setOrders(response.data.data)
-      console.log(orders);
+      // console.log(orders);
       
     }
     fetchData()
   },[headers])
   return (
-    <div className="container mx-auto px-4 py-8">
+    <div className="container mx-auto px-4 h-130 py-8">
     <h1 className="text-2xl font-bold text-white mb-4">Order History</h1>
     <table className="min-w-full bg-zinc-900 text-white border">
         <thead>

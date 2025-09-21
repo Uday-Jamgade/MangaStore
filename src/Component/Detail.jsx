@@ -25,7 +25,7 @@ const Detail = () => {
       try {
         const response = await axios.get(`http://localhost:3000/api/v1/get-book-id/${id}`);
         SetData(response.data.data); // Update the state with the response data
-        console.log(response);
+        // console.log(response);
         
       } catch (error) {
         console.error("Error fetching data: ", error);
@@ -41,6 +41,7 @@ const Detail = () => {
    const response = await axios.put(`http://localhost:3000/api/v1/add-cart`,{},{headers})
   }
   FetchCart()
+  alert("Book added to cart")
  }
 
   return (

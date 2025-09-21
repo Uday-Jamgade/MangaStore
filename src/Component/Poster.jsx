@@ -1,4 +1,6 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
+import { MdArrowBack } from "react-icons/md";
 
 const Poster = () => {
 
@@ -18,6 +20,7 @@ const Poster = () => {
 
   return (
     <div className="max-w-8xl mx-auto p-6">
+       <Link to="/category/?category=Manga"><div > <button className='fixed top-20 left-4 bg-gray-400 text-xl  text-white px-4 py-2 rounded shadow-md hover:bg-gray-500 transition'> <MdArrowBack /></button></div></Link>
     <div className="flex flex-wrap -mx-2">
       {posters.map((poster, index) => (
         <div key={index} className="w-full sm:w-1/2 md:w-1/4 p-2">
