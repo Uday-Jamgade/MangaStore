@@ -16,7 +16,7 @@ const Card = ({data}) => {
   const AddtoCart =()=>{
 
     const FetchCart= async ()=>{
-     const response = await axios.put(`http://localhost:3000/api/v1/add-cart`,{},{headers})
+     const response = await axios.put(`https://mangastore-backend-1.onrender.com/api/v1/add-cart`,{},{headers})
      console.log(response);
      
     }

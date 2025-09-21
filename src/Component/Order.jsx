@@ -11,7 +11,7 @@ const Order = () => {
 
   useEffect(()=>{
     const fetchData=async()=>{
-      const response = await axios.get("http://localhost:3000/api/v1/get-order-history",{headers})
+      const response = await axios.get("https://mangastore-backend-1.onrender.com/api/v1/get-order-history",{headers})
       setOrders(response.data.data)
       // console.log(orders);
       

@@ -16,7 +16,7 @@ function Category() {
       useEffect(()=>{
         const fetchData = async () => {
           try {
-            const response = await axios.get("http://localhost:3000/api/v1//get-book-category?category="+category);
+            const response = await axios.get("https://mangastore-backend-1.onrender.com/api/v1//get-book-category?category="+category);
             SetData(response.data.data); // Update the state with the response data
             // console.log(response);
             

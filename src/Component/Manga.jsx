@@ -8,7 +8,7 @@ const Manga = () => {
   useEffect(()=>{
     const fetchData = async () => {
       try {
-        const response = await axios.get("http://localhost:3000/api/v1/get-book");
+        const response = await axios.get("https://mangastore-backend-1.onrender.com/api/v1/get-book");
         SetData(response.data.data); // Update the state with the response data
         console.log(response);
         

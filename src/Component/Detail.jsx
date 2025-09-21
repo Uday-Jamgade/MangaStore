@@ -23,7 +23,7 @@ const Detail = () => {
   useEffect(()=>{
     const fetchData = async () => {
       try {
-        const response = await axios.get(`http://localhost:3000/api/v1/get-book-id/${id}`);
+        const response = await axios.get(`https://mangastore-backend-1.onrender.com/api/v1/get-book-id/${id}`);
         SetData(response.data.data); // Update the state with the response data
         // console.log(response);
         
@@ -38,7 +38,7 @@ const Detail = () => {
  const AddtoCart =()=>{
 
   const FetchCart= async ()=>{
-   const response = await axios.put(`http://localhost:3000/api/v1/add-cart`,{},{headers})
+   const response = await axios.put(`https://mangastore-backend-1.onrender.com/api/v1/add-cart`,{},{headers})
   }
   FetchCart()
   alert("Book added to cart")

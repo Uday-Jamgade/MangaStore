@@ -15,7 +15,7 @@ const Cart = () => {
 
   const handleCheckout=async()=>{
     try{
-      const response =await axios.post("http://localhost:3000/api/v1/place-order",{order:cartItems},{headers});
+      const response =await axios.post("https://mangastore-backend-1.onrender.com/api/v1/place-order",{order:cartItems},{headers});
       console.log( response.data)
       alert("Order Placed Successfully")
     }
@@ -29,7 +29,7 @@ const Cart = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('http://localhost:3000/api/v1/get-user-cart', { headers });
+        const response = await axios.get('https://mangastore-backend-1.onrender.com/api/v1/get-user-cart', { headers });
         setCartItems(response.data.data)
       } catch (error) {
         console.error('Error fetching data:', error);
@@ -43,7 +43,7 @@ const Cart = () => {
 
   const handleDelete= async (e,bookid)=>{
     e.preventDefault();
-    const response = await axios.put(`http://localhost:3000/api/v1/remove-cart/${bookid}`,{},{headers})
+    const response = await axios.put(`https://mangastore-backend-1.onrender.com/api/v1/remove-cart/${bookid}`,{},{headers})
     setCartItems(response.data.data)
      alert("Item Deleted")
   }

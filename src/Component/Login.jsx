@@ -21,7 +21,7 @@ const Login = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post("http://localhost:3000/api/v1/Sign-in", formData);
+            const response = await axios.post("https://mangastore-backend-1.onrender.com/api/v1/Sign-in", formData);
             setMessage("Login successful!");
             setError(null);
             // console.log('Form submitted:', formData);
