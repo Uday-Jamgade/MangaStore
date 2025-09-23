@@ -1,5 +1,6 @@
 import React, { useContext, useState } from 'react'
 import { FaHome, FaBook, FaQuoteRight, FaShoppingCart, FaUser,FaHamburger, } from 'react-icons/fa';
+import { SiTaichigraphics } from 'react-icons/si'
 import {Link, Links} from "react-router-dom"
 import { AuthContext } from '../ContextApi/Context';
 
@@ -19,7 +20,7 @@ const Navbar = () => {
         <Link to="/">  <li className="hover:text-gray-400 cursor-pointer flex items-center"><FaHome className="mr-2" />Home</li></Link>
         <Link to="/category/?category=Biography"> <li className="hover:text-gray-400 cursor-pointer flex items-center"><FaBook className="mr-2" />Biography</li> </Link>
         <Link to="/category/?category=Novel" ><li   className="hover:text-gray-400 cursor-pointer flex items-center"><FaQuoteRight className="mr-2" />Novel</li></Link>
-        <Link to="/category/?category=Manga"><li  className="hover:text-gray-400 cursor-pointer text-center flex items-center">Graphical Novels <br/>& Manga</li></Link>
+        <Link to="/category/?category=Manga"><li  className="hover:text-gray-400 cursor-pointer text-center flex items-center"><SiTaichigraphics />Graphical Novels <br/>& Manga</li></Link>
       
 {islogin && <Link to="/cart"><li className="hover:text-gray-400 cursor-pointer flex items-center"><FaShoppingCart className="mr-2" />Cart</li></Link>}
           {islogin && <Link to="/profile"><li className="hover:text-gray-400 cursor-pointer flex items-center"><FaUser className="mr-2" />Profile</li></Link>}
@@ -32,14 +33,14 @@ const Navbar = () => {
               <FaHamburger  className="mr-2"  /> 
         </button>
         <ul className={`${displayItem} md:flex gap-6 text-lg`}>
-        <Link to="/">  <li className="hover:text-gray-400 cursor-pointer flex items-center"><FaHome className="mr-2" />Home</li></Link>
-        <Link to="/category/?category=Biography"> <li className="hover:text-gray-400 cursor-pointer flex items-center"><FaBook className="mr-2" />Biography</li> </Link>
-        <Link to="/category/?category=Novel" ><li className="hover:text-gray-400 cursor-pointer flex items-center"><FaQuoteRight className="mr-2" />Novel</li></Link>
-        <Link to="/category/?category=Manga"><li className="hover:text-gray-400 cursor-pointer flex items-center"> Manga</li></Link>
-        <Link to="/cart"><li className="hover:text-gray-400 cursor-pointer flex items-center"><FaShoppingCart className="mr-2" />Cart</li> </Link>
-        <Link to="/profile"><li className="hover:text-gray-400 cursor-pointer flex items-center"><FaUser className="mr-2" />Profile</li></Link>
-        <Link to="/sign-up"><li className="hover:text-gray-400 cursor-pointer flex items-center"><button>Sign Up</button></li></Link>
-        <Link to="/login"><li className="hover:text-gray-400 cursor-pointer flex items-center"><button>Login</button></li></Link>
+        <Link to="/" onClick={()=>serDisplayItem("hidden")}>  <li className="hover:text-gray-400 cursor-pointer flex items-center"><FaHome className="mr-2" />Home</li></Link>
+        <Link to="/category/?category=Biography" onClick={()=>serDisplayItem("hidden")}> <li className="hover:text-gray-400 cursor-pointer flex items-center"><FaBook className="mr-2" />Biography</li> </Link>
+        <Link to="/category/?category=Novel" onClick={()=>serDisplayItem("hidden")}><li className="hover:text-gray-400 cursor-pointer flex items-center"><FaQuoteRight className="mr-2" />Novel</li></Link>
+        <Link to="/category/?category=Manga" onClick={()=>serDisplayItem("hidden")}><li className="hover:text-gray-400 cursor-pointer flex items-center"><SiTaichigraphics /> Manga</li></Link>
+      {islogin &&  <Link to="/cart" onClick={()=>serDisplayItem("hidden")}><li className="hover:text-gray-400 cursor-pointer flex items-center"><FaShoppingCart className="mr-2" />Cart</li> </Link>}
+        {islogin && <Link to="/profile" onClick={()=>serDisplayItem("hidden")}><li className="hover:text-gray-400 cursor-pointer flex items-center"><FaUser className="mr-2" />Profile</li></Link>}
+        {!islogin && <Link to="/sign-up" onClick={()=>serDisplayItem("hidden")}><li className="hover:text-gray-400 cursor-pointer flex items-center"><button className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded'>Sign Up</button></li></Link>}
+        {!islogin && <Link to="/login" onClick={()=>serDisplayItem("hidden")}><li className="hover:text-gray-400 cursor-pointer flex items-center"><button className='bg-green-500 hover:bg-green-700 text-white font-bold py-2 mt-2 px-4 rounded'>Login</button></li></Link>}
       </ul>
 
       </div>
