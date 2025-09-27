@@ -47,7 +47,7 @@ const Cart = () => {
     e.preventDefault();
     const response = await axios.put(`https://mangastore-backend-1.onrender.com/api/v1/remove-cart/${bookid}`,{},{headers})
     setCartItems(response.data.data)
-     alert("Item Deleted")
+    toast.success("Item Deleted Successfully!");
   }
 
   useEffect(()=>{
@@ -89,7 +89,7 @@ const Cart = () => {
                     <p className="text-lg font-bold text-blue-600">${item.price}</p>
                   </div>
                   <button
-                    onClick={() => handleDelete(e,item._id)}
+                    onClick={(e) => handleDelete(e, item._id)}
                     className="ml-4 text-red-500 hover:text-red-700"
                   >
                     <FaTrash />
