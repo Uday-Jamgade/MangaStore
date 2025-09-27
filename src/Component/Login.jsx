@@ -2,6 +2,7 @@ import React ,{useContext, useState} from 'react'
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../ContextApi/Context';
+import { toast } from 'react-toastify';
 
 const Login = () => {
     const [formData, setFormData] = useState({
@@ -34,10 +35,12 @@ const Login = () => {
             login(true);
 
             Navigate("/profile");
+            toast.success("Login Successful!");
         } catch (error) {
             setMessage(null);
             setError(error.response ? error.response.data.message : "Network Error");
-            console.error("Error submitting form: ", error);}
+            // console.error("Error submitting form: ", error);
+            toast.error(error.response ? error.response.data.message : "Network Error");}
         }
         
   return (
@@ -80,6 +83,7 @@ const Login = () => {
     {message && <p className="text-green-500 mt-4">{message}</p>}
     {error && <p className="text-red-500 mt-4">{error}</p>}
         </div>
+        
   )
 }
 

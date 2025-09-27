@@ -10,10 +10,11 @@ const Manga = () => {
       try {
         const response = await axios.get("https://mangastore-backend-1.onrender.com/api/v1/get-book");
         SetData(response.data.data); // Update the state with the response data
-        console.log(response);
+        // console.log(response);
         
       } catch (error) {
-        console.error("Error fetching data: ", error);
+        // console.error("Error fetching data: ", error);
+        toast.error("Error fetching data: " + (error.response ? error.response.data.message : "Network Error"));
       }
     }
 

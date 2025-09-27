@@ -5,6 +5,7 @@ import Card from './Card';
 import { Link, useLocation } from 'react-router-dom'; 
 import { ImQuotesLeft } from "react-icons/im";
 import { GiTargetPoster } from "react-icons/gi"    
+import { toast } from 'react-toastify';
 function Category() {
 
      const [data,SetData]=useState("");
@@ -20,8 +21,10 @@ function Category() {
             SetData(response.data.data); // Update the state with the response data
             // console.log(response);
             
+            
           } catch (error) {
             console.error("Error fetching data: ", error);
+            toast.error("Error fetching data: " + (error.response ? error.response.data.message : "Network Error"));
           }
         }
     

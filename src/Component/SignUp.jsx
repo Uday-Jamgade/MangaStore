@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 const SignUp = () => {
     
@@ -25,13 +26,15 @@ const SignUp = () => {
             const response = await axios.post("https://mangastore-backend-1.onrender.com/api/v1/Sign-up", formData);
             setMessage(response.data.message);
             setError(null);
-            console.log('Form submitted:', formData);
-            console.log('Server response:', response.data);
+            // console.log('Form submitted:', formData);
+            // console.log('Server response:', response.data);
             Navigate("/login")
+            toast.success("Sign Up Successful! Please Login.");
         } catch (error) {
             setMessage(null);
             setError(error.response ? error.response.data.message : "Network Error");
-            console.error("Error submitting form: ", error);
+            // console.error("Error submitting form: ", error);
+            toast.error(error.response ? error.response.data.message : "Network Error");
         }
        
         };

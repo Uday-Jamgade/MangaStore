@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react'
 import { AuthContext } from '../ContextApi/Context'
 import axios from 'axios'
 import { FaTrash } from 'react-icons/fa';
+import { toast } from 'react-toastify';
 
 const Cart = () => {
 
@@ -17,10 +18,11 @@ const Cart = () => {
     try{
       const response =await axios.post("https://mangastore-backend-1.onrender.com/api/v1/place-order",{order:cartItems},{headers});
       console.log( response.data)
-      alert("Order Placed Successfully")
+     toast.success("Order Placed Successfully!")
     }
     catch (error){
       console.error("error",error)
+      toast.error("Error placing order: " + (error.response ? error.response.data.message : "Network Error"));
     }
   
 

@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom'
 import { useState, useEffect } from 'react';
 import axios from "axios";
 import { AuthContext } from '../ContextApi/Context';
+import { toast } from 'react-toastify';
 
 
 const Detail = () => {
@@ -28,7 +29,8 @@ const Detail = () => {
         // console.log(response);
         
       } catch (error) {
-        console.error("Error fetching data: ", error);
+        // console.error("Error fetching data: ", error);
+        toast.error("Error fetching data: " + (error.response ? error.response.data.message : "Network Error"));
       }
     }
 
@@ -41,7 +43,7 @@ const Detail = () => {
    const response = await axios.put(`https://mangastore-backend-1.onrender.com/api/v1/add-cart`,{},{headers})
   }
   FetchCart()
-  alert("Book added to cart")
+  toast.success("Book Added to Cart Successfully!")
  }
 
   return (

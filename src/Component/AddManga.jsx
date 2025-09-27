@@ -34,8 +34,10 @@ const AddManga = () => {
         try {
             const response = await axios.post('https://mangastore-backend-1.onrender.com/api/v1/add-book', formData,{headers});
             setMessage('Book added successfully!');
+            toast.success("Book added successfully!");
         } catch (error) {
             setMessage('Error adding book');
+            toast.error("Error adding book: " + (error.response ? error.response.data.message : "Network Error"));
         }
     };
 
